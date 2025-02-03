@@ -1,0 +1,229 @@
+To help you build the Beaconchain Dashboard app, which is an Ethereum and Gnosis validator performance tracker app, here’s an outline of the steps involved, the core features, and the setup process. The app is based on Ionic and Angular, utilizing Capacitor for native mobile capabilities.
+
+Here’s a guide to get you started with the development:
+
+
+---
+
+1. Prerequisites
+
+Node.js (Version 16 or higher)
+
+Ionic CLI: A framework for building mobile apps using web technologies.
+
+Android Studio: For building and running the Android app.
+
+Xcode: For building and running the iOS app (macOS only).
+
+Google services configuration files:
+
+google-services.json (for Android)
+
+GoogleService-Info.plist (for iOS)
+
+
+
+
+---
+
+2. Cloning the Repository
+
+Start by cloning the project repository:
+
+git clone https://github.com/your-repository-url/beaconchain-dashboard.git
+cd beaconchain-dashboard
+
+
+---
+
+3. Install Dependencies
+
+Install the necessary dependencies using npm:
+
+npm install -g @ionic/cli native-run cordova-res
+npm install
+
+
+---
+
+4. Development Setup
+
+Browser Preview
+
+You can start the app in a browser by running:
+
+npm run-script serve
+
+This will launch the app with livereload, so you can see changes in real-time.
+
+
+---
+
+Android Setup
+
+1. Install Android Studio (version 2022.2.1 or newer).
+
+Set up the Android SDK.
+
+Follow the setup guide on Capacitor's Android setup documentation.
+
+
+
+2. Build the app: To build the app for Android, use:
+
+ionic build
+
+
+3. Run the app with livereload: Ensure port 8100 is accessible on your computer and then use:
+
+ionic cap run android --livereload --external --host=192.168.1.64 --disableHostCheck --configuration=development
+
+Adjust the --host parameter to match your local IP address.
+
+
+
+4. Build for Production: When you’re ready to build for production, run:
+
+npm run-script build-android-for-production
+
+
+5. Install via Android Studio: To install on a physical Android device, use Android Studio or run on an emulator.
+
+Follow the guide on Android Studio Device Setup.
+
+
+
+
+
+---
+
+iOS Setup
+
+1. Prerequisites:
+
+Node.js (16+)
+
+macOS (Monterey 12.5+)
+
+Xcode 14.1+
+
+
+
+2. Build the app: Run:
+
+ionic build
+
+
+3. Run with livereload: To use livereload on iOS, use:
+
+ionic cap run ios --livereload --external --host=192.168.1.64 --disableHostCheck --configuration=development
+
+Adjust --host with your mac’s IP address.
+
+
+
+4. Build for Production: To build the app for production:
+
+npm run-script build-ios-for-production
+
+
+5. Install on iOS: Use Xcode to install the app on a real device or simulator.
+
+Refer to the iOS Device Setup.
+
+
+
+
+
+---
+
+5. Features of Beaconchain Dashboard
+
+The app includes several key features:
+
+1. Validator Performance Tracking:
+
+Track the status of your Ethereum and Gnosis validators, including their online status, balances, and returns.
+
+
+
+2. Notification Alerts:
+
+Set up alerts for validator performance and execution block rewards.
+
+
+
+3. Machine Monitoring:
+
+Monitor machine metrics such as CPU and network usage.
+
+
+
+4. Rocketpool Support:
+
+Support for partial validator ownership via Rocketpool.
+
+
+
+5. Multiple Currencies:
+
+Support for different currencies for easier financial tracking.
+
+
+
+6. Light/Dark Themes:
+
+Switch between light and dark themes based on user preference.
+
+
+
+7. Network Warnings:
+
+Alerts for any network issues, Ethereum client updates, or warnings.
+
+
+
+8. Mainnet and Testnet Support:
+
+Ability to monitor both Ethereum mainnet and testnet performance.
+
+
+
+
+
+---
+
+6. Best Practices
+
+Use Components: For reusability, especially when dealing with multiple pages or sections in your app.
+
+Use Pipes: For common data formatting tasks like currency conversion.
+
+Theming: Use CSS variables in src/app/theme/variables.scss and src/app/global.scss for styling according to the light/dark theme preference.
+
+State Management: Ensure state management for tracking validator data and notifications. Utilize services and Angular's store mechanism if required.
+
+
+
+---
+
+7. License
+
+This project is licensed under GPLv3. You are free to use, modify, and distribute the app under this license.
+
+
+---
+
+Next Steps
+
+Once you’ve set up the development environment, you can start working on specific features like:
+
+Building the Dashboard UI: Use Angular components and Ionic’s mobile components.
+
+API Integration: Integrate with the Beaconcha.in API to fetch live data for the Ethereum and Gnosis validators.
+
+Notification System: Implement a push notification system for validator status alerts.
+
+
+This should give you a strong foundation to develop and deploy your Beaconchain Dashboard app! Let me know if you'd like further assistance with specific parts of the app or additional questions!
+
